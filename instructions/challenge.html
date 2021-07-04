@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Problem Statement</title>
+   <style type="text/css">
+   body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  background:white;
+}
+@media screen and (max-width: 1080px) {
+  body {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.wrapper {
+
+  padding-left: 40px;
+  max-width: 1000px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 1080px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.row.green {
+  background: #27ae60;
+}
+.row.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 1080px) {
+  .row {
+    padding: 14px 0 7px;
+    display: block;
+  }
+  .row.header {
+    padding: 0;
+    height: 6px;
+  }
+  .row.header .cell {
+    display: none;
+  }
+  .row .cell {
+    margin-bottom: 10px;
+  }
+  .row .cell:before {
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #969696;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 1080px) {
+  .cell {
+    padding: 2px 16px;
+    display: block;
+  }
+}
+.actual{
+   color:black;
+}
+
+
+</style>
+</head>
+<body>
+<h2 class="actual">Wings-Vaccination-Analysis</h2>
+<p class="actual" style="font-size:large">
+  You are employed to perform a basic analysis on the data of the country's vaccination drive against covid-19. Use the data that is present in the directory named input and implement the below steps to complete the challenge.
+</p>
+
+<p class="actual">
+  <strong>IMPORTANT:</strong>
+  <ul>
+  <li class="actual">Use the respective instructions for Python and Scala for a detailed instructions on how to implement, run and test your code.</li>
+
+<li><a
+  href="Getting_started_with_environment_and_validate_cluster_health.pdf"><span
+  style='color:#954F72'>Getting_started_with_environment_and_validate_cluster_health.pdf</span></a></li>
+
+<li><a
+  href="Instructions_for_using_Pyspark_with_VSCode.pdf"><span style='color:
+  #954F72'>Instructions_for_using_Pyspark_with_VSCode.pdf</span></a></li>
+
+<li><a
+  href="Instructions_for_using_Scala_with_VSCode.pdf"><span style='color:#954F72'>Instructions_for_using_Scala_with_VSCode.pdf</span></a></li>
+
+  </ul>
+</p>
+
+
+<p class="actual">
+  <strong>NOTE:</strong>
+  <ul>
+<li class="actual"> <span style="color: red;"><b>Do not make any changes to the exsisting code as it may break the flow of execution</b></span> </li>
+<li class="actual"> <span style="color: red;"><b>Follow the comments in the actual challenge file for easier understanding </b></span> </li>
+
+  <li class="actual"> The extraction and loading methods for the data are already implemented which are <span style="color: orange;"><b>extract_data</b></span> and <span style="color: orange;"><b>load_data</b></span> which has the below functionality.</li>
+  <ul>
+    <li class="actual">The method <span style="color: orange;"><b>extract_data</b></span> accepts a file as a parameter that is present in the input location and reads the file contents and returns a dataframe.</li>
+    <li class="actual">The method <span style="color: orange;"><b>load_data</b></span> accepts a dataframe as a parameter and saves the dataframe into a file in the designated folder.</li>
+  </ul>
+  <li class="actual"> Make sure you use proper naming conventions for the columns names which are marked in a different colour in the table below.</li>
+  <li class="actual">There are two seperate folders, one for python and another for scala.</li>
+  </ul>
+  
+  </p>
+  
+
+<h3 class="actual">
+  PROBLEM STATEMENT:
+</h3>
+<p class="actual">Go through the following table to get a complete overview on what has to be done in the challenge.</p>
+
+<div class="wrapper">
+  
+  <div class="table">
+    
+    <div class="row header">
+      <div class="cell">S.No</div>
+      <div class="cell">Steps</div>
+      <div class="cell">Description</div>
+      <div class="cell">Hint</div>
+    </div>
+    
+    <div class="row">
+      <div class="cell"> <b>1.</b> </div>
+      <div class="cell"> <b>STEP1</b> </div>
+      <div class="cell"> Remove all rows with null values in column total_vaccinations. Drop unecessary columns such as source_name and source_website </div>
+      <div class="cell"> - </div>
+    </div>
+    
+    <div class="row">
+      <div class="cell"> <b>2.</b> </div>
+      <div class="cell"> <b>STEP2</b> </div>
+      <div class="cell"> Select Rows with name country, iso_code and vaccines. Find the most common vaccine used in each country. Rename the columns as max_vaccines</div>
+      <div class="cell"> - </div>
+    </div>
+    
+	<div class="row">
+      <div class="cell"> <b>3.</b> </div>
+      <div class="cell"> <b>STEP3</b> </div>
+      <div class="cell"> Select Rows with name country, iso_code, vaccines, total_vaccinations. Find the top 5 countries with most number of vaccinations done. </div>
+      <div class="cell"> - </div>
+    </div>
+
+   <div class="row">
+      <div class="cell"> <b>4.</b> </div>
+      <div class="cell"> <b>STEP4</b> </div>
+      <div class="cell"> Select Rows with name country, date, iso_date, daily_vaccinations_per_million. Find the top 5 countries with maximum number of daily vaccinations per million of its people. </div>
+      <div class="cell"> - </div>
+    </div>
+
+    
+</div>
+
+
+</body>
+</html>
